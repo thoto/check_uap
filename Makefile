@@ -1,8 +1,11 @@
 LDFLAGS+= -ljsoncpp
-CXXFLAGS+= -g -Wall -Wunused -Wextra -pedantic -std=c++11
+CXXFLAGS+= -g -Wall -Wunused -Wextra -pedantic -std=c++11 -DRUN_TEST
 
-check_unifi_state: main.o
+check_unifi_state: main.o actions.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+main.o: actions.h main.h
+actions.o: actions.h main.h
 
 all: check_unifi_state
 
