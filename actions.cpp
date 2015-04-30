@@ -141,4 +141,3 @@ void action_online::scan(const Json::Value &v){
 		state=false;
 	}
 }
-
