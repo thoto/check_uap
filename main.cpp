@@ -24,20 +24,20 @@ int nagret_return=3;
 int nagret_gen(enum nagret nr, string msg, string perf=""){
 	switch(nr){
 		case RET_CRITICAL:
-			cout<<"UNIFI CRITICAL - "+msg+"|"+perf<<endl;
+			cout<<"UAP CRITICAL - "+msg+"|"+perf<<endl;
 			return nagret_return=2;
 			break;
 		case RET_WARNING:
-			cout<<"UNIFI WARNING - "+msg+"|"+perf<<endl;
+			cout<<"UAP WARNING - "+msg+"|"+perf<<endl;
 			return nagret_return=1;
 			break;
 		case RET_OK:
-			cout<<"UNIFI OK - "+msg+"|"+perf<<endl;
+			cout<<"UAP OK - "+msg+"|"+perf<<endl;
 			return nagret_return=0;
 			break;
 		case RET_UNKNOWN:
 		default:
-			cout<<"UNIFI UNKNOWN - "+msg+"|"+perf<<endl;
+			cout<<"UAP UNKNOWN - "+msg+"|"+perf<<endl;
 			return nagret_return=3;
 	}
 }
